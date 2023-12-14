@@ -71,7 +71,7 @@ int parse_line(char *buffer, int line_number, int format)
 }
 
 /**
- * find_funtion - find the appropriate function for the opcode
+ * find_function - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
@@ -104,7 +104,7 @@ void find_function(char *opcode, char *value, int ln, int format)
 	};
 
 	if (opcode[0] == '#')
-		return ;
+		return;
 
 	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
