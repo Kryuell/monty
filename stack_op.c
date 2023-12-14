@@ -10,7 +10,7 @@ void add_mul_nodes(stack_t **stack, unsigned int line_number)
 	int product;
 
 	if (!stack || !(*stack) || !(*stack)->next)
-		more_err(8, line_number, "mul");
+		more_error(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
 	product = (*stack)->n * (*stack)->prev->n;
@@ -29,10 +29,10 @@ void add_mod_nodes(stack_t **stack, unsigned int line_number)
 	int remainder;
 
 	if (!stack || !(*stack) || !(*stack)->next)
-		more_err(8, line_number, "mod");
+		more_error(8, line_number, "mod");
 
 	if ((*stack)->n == 0)
-		more_err(9, line_number);
+		more_error(9, line_number);
 
 	(*stack) = (*stack)->next;
 	remainder = (*stack)->n % (*stack)->prev->n;

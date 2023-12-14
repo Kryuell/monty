@@ -85,26 +85,26 @@ void find_function(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
+		{"push", add_stack},
 		{"pall", print_stack},
-		{"pint", print_top},
+		{"pint", print_top_node},
 		{"pop", pop_top},
-		{"nop", nop},
+		{"nop", nofunction},
 		{"swap", swap_nodes},
 		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
+		{"sub", add_sub_nodes},
+		{"div", add_div_nodes},
+		{"mul", add_mul_nodes},
+		{"mod", add_mod_nodes},
 		{"pchar", print_char},
-		{"pstr", print_str},
+		{"pstr", print_string},
 		{"rotl", rotl},
 		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
 	if (opcode[0] == '#')
-		return (NULL);
+		return ;
 
 	for (flag = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
